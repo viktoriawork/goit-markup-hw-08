@@ -1,0 +1,70 @@
+.main-menu {
+  background-color: $c--bg-color;
+  width: 100%;
+
+  @media screen and (max-width: 767px) {
+    display: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    padding: 48px 40px;
+    overflow-y: scroll;
+    text-align: left;
+    z-index: 3;
+
+    &.is-open {
+      display: block;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.button-list-menu {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  margin-left: auto;
+  padding: 12px 8px;
+  z-index: 4;
+
+  background-color: $c--bg-color;
+  border: none;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.button-list-menu__icon-menu {
+  .button-list-menu.is-open & {
+    display: none;
+  }
+
+  .button-list-menu.is-open:hover &,
+  .button-list-menu.is-open:focus & {
+    fill: $c--accent-color;
+  }
+}
+
+.button-list-menu__icon-cross {
+  .button-list-menu & {
+    display: none;
+  }
+
+  .button-list-menu.is-open & {
+    display: block;
+  }
+
+  .button-list-menu:hover &,
+  .button-list-menu:focus & {
+    fill: $c--accent-color;
+  }
+}

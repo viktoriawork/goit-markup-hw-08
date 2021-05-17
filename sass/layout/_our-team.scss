@@ -1,0 +1,50 @@
+.team {
+  background-color: $light-color;
+  text-align: center;
+}
+
+.team-list {
+  @media screen and (min-width: $tablet) {
+    margin: -15px;
+    padding-left: 0;
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.team-list__item {
+  background-color: $c--bg-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin: 15px;
+    flex-basis: calc((100% - 60px) / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    flex-basis: calc((100% - 120px) / 4);
+  }
+}
+
+.team-content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.team-content__name {
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  color: $title-color;
+}
+
+.team-content__job {
+  font-size: 16px;
+}

@@ -1,0 +1,121 @@
+.portfolio {
+  box-sizing: border-box;
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -15px;
+  }
+}
+
+.portfolio__item {
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    margin: 15px;
+    width: calc((100% - 60px) / 2);
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: calc((100% - 90px) / 3);
+  }
+
+  background-color: $c--bg-color;
+  text-align: left;
+}
+
+.portfolio-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+}
+
+.portfolio-border {
+  height: 100%;
+  padding: 20px 24px;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  box-sizing: border-box;
+}
+
+.portfolio-border__title {
+  margin-bottom: 4px;
+
+  color: $title-color;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.portfolio-border__subtitle {
+  color: $txt-main-color;
+  font-size: 16px;
+  line-height: 1.88;
+}
+
+//work examples (overlay)
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.portfolio-thumb__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  .portfolio-link:hover &,
+  .portfolio-link:focus & {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.portfolio-thumb__text {
+  position: absolute;
+  top: 30px;
+  left: 24px;
+  right: 24px;
+  opacity: 0;
+  margin: 0;
+
+  min-width: 322px;
+  min-height: 168px;
+
+  font-size: 18px;
+  line-height: 1.56;
+  color: $c--bg-color;
+
+  .portfolio-link:hover &,
+  .portfolio-link:focus & {
+    opacity: 1;
+  }
+
+  @media screen and (min-width: 480px) {
+    top: 63px;
+  }
+}

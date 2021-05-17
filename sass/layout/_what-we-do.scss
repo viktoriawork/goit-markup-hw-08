@@ -1,0 +1,42 @@
+.what-we-do {
+  @media screen and (max-width: 1199px) {
+    display: none;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+.what-we-do__list {
+  margin: -15px;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.what-we-do__item {
+  position: relative;
+  margin: 15px;
+  flex-basis: calc((100% - 90px) / 3);
+}
+
+//what we do (actions)
+
+.what-we-do__desk {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 70px;
+  margin-bottom: 0;
+
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: $c--bg-color;
+  background: rgba(47, 48, 58, 0.8);
+}
